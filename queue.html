@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Queue Data Structure
+</body>
+<script>
+    function Queue(){
+        collection = [];
+        this.print = function(){
+            console.log(collection);
+        }
+        this.enqueue = function(element){
+            collection.push(element);
+        }
+        this.dequeue = function(){
+            return collection.shift();
+        }
+        this.front = function(){
+            return collection[0];
+        }
+        this.size = function(){
+            return collection.length;
+        }
+        this.isEmpty = function(){
+            return collection.length === 0
+        }
+    }
+    let q = new Queue();
+    q.enqueue(1)
+    console.log(q.isEmpty())
+</script>
+</html>

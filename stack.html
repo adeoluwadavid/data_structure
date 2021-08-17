@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>Stack, A Javascript Data Structure</div>
+</body>
+<script>
+    // A stack is Last In First Out just like a stack of Book.
+    // This example will demonstrate a stack using Palindrome checker.
+
+    let letters = []
+    let word = 'racecar'
+    let rword = ''
+    //Note: Array in JS support Stack Data Structures
+
+    // Put letters of word into stack
+    for(let i = 0; i < word.length; i++){
+        letters.push(word[i]);
+    }
+    console.log(letters)
+    for (let i = 0; i < word.length; i++){
+        rword = rword + letters.pop();
+    }
+    console.log(rword)
+
+    if(rword === word){
+        console.log(word + ' is a palindrome');
+    }else{
+        console.log(word + ' is not a palindrome'); 
+    }
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Stack In Depth.
+</body>
+<Script>
+    // Stack is LIFO - Last In First Out.
+
+    // Stack Creation
+    let Stack = function(){
+        this.count = 0;
+        this.storage = {};
+
+        // Adds a value onto the end of the stack
+        this.push = function(value){
+            this.storage[this.count] = value
+            this.count++;
+        }
+
+        //Removes and return the value at the end of the stack
+        this.pop = function(){
+            if(this.count === 0) return undefined;
+            this.count--;
+            let result = this.storage[this.count];
+            delete this.storage[this.count]
+            return result;
+        }
+ 
+        // Returns Stack Size
+        this.size = function(){
+            return this.count
+        }
+
+        // Returns the value at the end of the stack
+        this.peek = function(){
+            return this.storage[this.count - 1];
+        }
+    }
+
+    let myStack = new Stack();
+    myStack.push(1)
+    myStack.push(2)
+    myStack.push('Adewole')
+    myStack.push('David')
+    console.log(myStack.peek())
+    console.log(myStack.size())
+</Script>
+</html>
